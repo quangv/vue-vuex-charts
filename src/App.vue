@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <h1>How many puppies sold this week?</h1>
+    <chart></chart>
     <day num="1"></day>
     <day num="2"></day>
     <day num="3"></day>
@@ -15,11 +16,13 @@
 
 <script>
 import Day from './components/Day'
+import Chart from './components/Chart'
 
 export default {
   name: 'app',
   components: {
-    Day
+    Day,
+    Chart
   }
 }
 </script>
