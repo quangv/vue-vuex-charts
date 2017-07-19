@@ -1,7 +1,7 @@
 <template>
   <div class="day">
     <input type="number" :placeholder="name" min="0" />
-    <button class="btn btn-success"><i class="glyphicon glyphicon-plus"></i></button>
+    <button class="btn btn-success" @click="addClick"><i class="glyphicon glyphicon-plus"></i></button>
     <button class="btn btn-danger"><i class="glyphicon glyphicon-minus"></i></button>
   </div>
 </template>
@@ -14,11 +14,11 @@
 
 <script>
 const names = {
-  1: "Monday",
-  2: "Tuesday",
-  3: "Wednesday",
-  4: "Thursday",
-  5: "Friday"
+  0: "Monday",
+  1: "Tuesday",
+  2: "Wednesday",
+  3: "Thursday",
+  4: "Friday"
 }
 
 export default {
@@ -27,6 +27,11 @@ export default {
   computed: {
     name: function() {
       return names[this.num]
+    }
+  },
+  methods: {
+    addClick: function() {
+      this.$store.dispatch('plus', this.num)
     }
   }
 }
