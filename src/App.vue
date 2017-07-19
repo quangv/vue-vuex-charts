@@ -1,7 +1,10 @@
 <template>
   <div id="app">
+    <h1>How many puppies sold this week?</h1>
+    <!--
     <img src="./assets/logo.png">
     <hello></hello>
+    -->
   </div>
 </template>
 
