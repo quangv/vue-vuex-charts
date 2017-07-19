@@ -24,7 +24,7 @@ export default {
           label: "Puppies sold",
           backgroundColor: 'rgb(255, 99, 132)',
           borderColor: 'rgb(255, 99, 132)',
-          data: [0, 10, 5, 2, 20]
+          data: this.$store.state.chartData
         }]
       },
       options: {}
