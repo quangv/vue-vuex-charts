@@ -13,13 +13,5 @@ export default {
       index,
       value: --state.chartData[index]
     })
-  },
-
-  // Updates puppies of day
-  update ({state, commit}, index, value) {
-    commit('update', {
-      index,
-      value
-    })
   }
 }

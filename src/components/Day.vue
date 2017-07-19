@@ -1,14 +1,20 @@
 <template>
   <div class="day">
-    <input type="number" :placeholder="name" min="0" />
+    <label>
+      {{ name }} {{ value }}
+    </label>
     <button class="btn btn-success" @click="addClick"><i class="glyphicon glyphicon-plus"></i></button>
-    <button class="btn btn-danger"><i class="glyphicon glyphicon-minus"></i></button>
+    <button class="btn btn-danger" @click="minusClick"><i class="glyphicon glyphicon-minus"></i></button>
   </div>
 </template>
 
 <style scoped>
 .day {
   padding: 0.25em 0;
+}
+label {
+  width: 100px;
+  text-align: right;
 }
 </style>
 
@@ -27,11 +33,21 @@ export default {
   computed: {
     name: function() {
       return names[this.num]
+    },
+    value: function() {
+      return this.$store.state.chartData[this.num]
     }
   },
   methods: {
     addClick: function() {
       this.$store.dispatch('plus', this.num)
+    },
+    minusClick: function() {
+      // Don't let go below 0
+      if (this.value === 0) {
+        return;
+      }
+      this.$store.dispatch('minus', this.num)
     }
   }
 }
