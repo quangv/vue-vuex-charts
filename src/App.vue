@@ -1,6 +1,11 @@
 <template>
   <div id="app">
     <h1>How many puppies sold this week?</h1>
+    <day num="1"></day>
+    <day num="2"></day>
+    <day num="3"></day>
+    <day num="4"></day>
+    <day num="5"></day>
     <!--
     <img src="./assets/logo.png">
     <hello></hello>
@@ -9,12 +14,12 @@
 </template>
 
 <script>
-import Hello from './components/Hello'
+import Day from './components/Day'
 
 export default {
   name: 'app',
   components: {
-    Hello
+    Day
   }
 }
 </script>
