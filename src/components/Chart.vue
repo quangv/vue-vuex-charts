@@ -27,7 +27,15 @@ export default {
           data: this.$store.state.chartData
         }]
       },
-      options: {}
+      options: {
+        scales: {
+          yAxes: [{
+            ticks: {
+              beginAtZero: true
+            }
+          }]
+        }
+      }
     })
   }
 }
